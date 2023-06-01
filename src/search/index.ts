@@ -1,5 +1,5 @@
 const finderArr1 = (arr: number[], t: number) => {
-  for (let i = 0; i <= arr.length; i++) {
+  for (let i = 0; i <= arr.length - 1; i++) {
     if (arr[i] == t) {
       return i;
     }
@@ -68,7 +68,7 @@ const bianrySearch3 = (arr: number[], target: number) => {
 };
 
 const linearSearch3 = (arr: number[], target: number) => {
-  for (let i = 0; i <= arr.length; i++) {
+  for (let i = 0; i <= arr.length - 1; i++) {
     if (target === arr[i]) {
       return i;
     }
@@ -217,7 +217,7 @@ const bianrySearch2 = (arr: number[], target: number) => {
 };
 
 const linearSearch = (arr: number[], target: number) => {
-  for (let i = 0; i <= arr.length; i++) {
+  for (let i = 0; i <= arr.length - 1; i++) {
     if (target === arr[i]) {
       return i;
     }
@@ -251,13 +251,15 @@ const search6 = (
 };
 
 const linearSearch2 = (arr: number[], target: number) => {
-  for (let i = 0; i <= arr.length; i++) {
+  for (let i = 0; i <= arr.length - 1; i++) {
+    console.log(arr[i], "test");
     if (target === arr[i]) {
       return i;
     }
   }
   return -1;
 };
+console.log(linearSearch2([1, 2, 3, 4], 5));
 
 const binarySearch2 = (arr: number[], target: number) => {
   let leftIndex = 0;
