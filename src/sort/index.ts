@@ -84,7 +84,6 @@ const insertSort1 = (arr: number[]) => {
   }
   return arr;
 };
-console.log(insertSort1([2, 6, 3, 5, 4]));
 
 // let arr = [-2, -4, -1, 3, 5, 6];
 // insertSort(arr);
@@ -200,7 +199,6 @@ const insertSort5 = (arr: number[]) => {
   }
   return arr;
 };
-console.log(insertSort5([2, 6, 3, 5, 4]));
 
 // Acenting [2,1,0,-1] order
 //
@@ -241,4 +239,86 @@ const bubbleSort5 = (arr: number[]) => {
   } while (swapped);
   return arr;
 };
-console.log(bubbleSort5([2, 1, 5, 3, 4]));
+
+//quick sort => povit any int  inside the arry
+// if greater than  to right  // if lower send
+
+const quickSort = (arr: number[]): number[] => {
+  if (arr.length < 2) {
+    return arr;
+  }
+  let vipot = arr[arr.length - 1];
+  let left = [];
+  let right = [];
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] < vipot) {
+      left.push(arr[i]);
+    } else {
+      right.push(arr[i]);
+    }
+  }
+  return [...quickSort(left), vipot, ...quickSort(right)];
+};
+
+// console.log(quickSort([-1, -5, 5, 4, 3, 6]));
+
+// function quickSort2(arr: number[]): number[] {
+//   if (arr.length < 2) return arr;
+//   let piot = arr[arr.length - 1];
+//   let left = [];
+//   let right = [];
+//   for (let i = 0; i <= arr.length - 1; i++) {
+//     if (arr[i] < piot) {
+//       left.push(arr[i]);
+//     } else {
+//       right.push(arr[i]);
+//     }
+//   }
+//   let sortedLeft = quickSort2(left);
+//   let sortedRight = quickSort2(right);
+//   return sortedLeft.concat(piot, sortedRight);
+// }
+
+// console.log(quickSort2([-1, -5, 5, 4, 3, 6]));
+
+// quicksort => vipor randon element ,  then
+
+const quickSort1 = (arr: number[]) => {
+  if (arr.length < 2) {
+    return arr;
+  }
+
+  let vipot = arr[arr.length - 1];
+
+  let left = [];
+  let right = [];
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] < vipot) {
+      left.push(arr[i]);
+    } else {
+      right.push(arr[i]);
+    }
+  }
+  return [...quickSort(left), vipot, ...quickSort(right)];
+};
+
+//sort el inside the array acenting or decenting
+// take pivot = any number inside the array
+// create the space for left and right array for  new el space
+// if el is greater push in right of pivot else push in left
+//concanated all together
+const quickSort3 = (arr: number[]): number[] => {
+  let vipot = arr[arr.length - 1];
+  let left = [];
+  let right = [];
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] < vipot) {
+      left.push(arr[i]);
+    } else {
+      right.push(arr[i]);
+    }
+  }
+  return [...quickSort(right), vipot, ...quickSort3(left)];
+};
+
+console.log(quickSort1([2, 4, 6, 1, -5]));
