@@ -365,9 +365,9 @@ const recursiveFactorial = (n: number): number => {
 };
 
 //Big-O => O(n)
-
 //factorial Number
 // 4 = 1*2*3*4
+
 const factorial6 = (n: number) => {
   let res = 1;
   for (let i = 2; i <= n; i++) {
@@ -511,4 +511,148 @@ const factorialRecursive = (n: number): number => {
   return n * factorialRecursive(n - 1);
 };
 
-console.log(factorialRecursive(4));
+//factorial // 3 = 3*2* 1
+const factorial8 = (n: number) => {
+  let res = 1;
+  for (let i = 2; i <= n; i++) {
+    res = res * i;
+  }
+  return res;
+};
+
+// console.log(factorial1(5));
+//recursiveFactorial
+
+const recursiveFactorial1 = (n: number): number => {
+  if (n === 0) {
+    return 1;
+  }
+  return n * recursiveFactorial1(n - 1);
+};
+
+//prime ==> greater than 1 // no int can divid to 0;
+
+const primeNumber7 = (n: number) => {
+  if (n < 2) {
+    return false;
+  }
+
+  for (let i = 2; i < n; i++) {
+    if (n % i === 0) {
+      return false;
+    }
+  }
+  return true;
+};
+
+//powerOfTwo ==> 2^2 = 4; 2 ^ 3 = 8
+
+const powerOFTwo = (n: number) => {
+  if (n < 1) {
+    return false;
+  }
+  for (let i = 2; i <= n; i++) {
+    if (n % 2 !== 0) {
+      return false;
+    }
+    n = n / 2;
+  }
+  return true;
+};
+
+//powerOftwoBitWise
+const powerOfTowBitWise1 = (n: number) => {
+  if (n < 1) {
+    return false;
+  }
+  return (n & (n - 1)) === 0;
+};
+
+//fabonancci => sequence ==>
+const fibonancci3 = (n: number) => {
+  let fib = [0, 1];
+  for (let i = 2; i <= n; i++) {
+    fib[i] = fib[i - 1] + fib[i - 2];
+  }
+  return fib;
+};
+
+//recursivefibonancci
+const recursiveFiboNancci1 = (n: number): number => {
+  if (n < 2) {
+    return n;
+  }
+  return recursiveFiboNancci1(n - 1) + recursiveFiboNancci1(n - 2);
+};
+
+// fibonancciSequence // start [0,1] //
+const fibonacci7 = (n: number) => {
+  let fib = [0, 1];
+  for (let i = 2; i <= n; i++) {
+    fib[i] = fib[i - 1] + fib[i - 2];
+  }
+  return fib;
+};
+
+//recursiveFibonancci
+const recursiveFibonancci = (n: number) => {
+  if (n < 2) {
+    return n;
+  }
+  return recirsiveFibonacci(n - 1) + recirsiveFibonacci(n - 2);
+};
+
+//primeNumber ==> positive int greaterthan 1 , no int modules can divid to zero
+const primeNumber8 = (n: number) => {
+  if (n < 1) {
+    return false;
+  }
+  for (let i = 2; i < n; i++) {
+    if (n % i === 0) {
+      return false;
+    }
+  }
+  return true;
+};
+//factorial ==> 4 = 4*3*2*1
+const factorial9 = (n: number) => {
+  let res = 1;
+  for (let i = 2; i <= n; i++) {
+    res = res * i;
+  }
+  return res;
+};
+
+//recursiveFactorial
+const recursiveFactorial2 = (n: number) => {
+  if (n < 2) {
+    return n;
+  }
+  return recursiveFactorial1(n * n - 1);
+};
+
+//powerOFTwo ==> 2^2 / 2^3
+
+const powerOfTwo6 = (n: number) => {
+  if (n < 1) {
+    return false;
+  }
+  for (let i = 2; i <= n; i++) {
+    if (n % 2 !== 0) {
+      return false;
+    }
+    n = n / 2;
+  }
+  return true;
+};
+
+//powerOfTwoBitwise
+
+const powerOfTwoBitwise = (n: number) => {
+  if (n < 1) {
+    return false;
+  }
+  return (n & (n - 1)) === 0;
+};
+
+//
